@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Follow-up Sender",
+  "version": "1.0",
+  "description": "Send follow-up emails to selected recipients from Gmail Sent folder",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Gmail Follow-up Sender"
+  },
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ]
+}
